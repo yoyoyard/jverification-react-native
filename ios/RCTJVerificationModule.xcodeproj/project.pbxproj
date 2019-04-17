@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B796F19226764410026434A /* jverification-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B796F18226764410026434A /* jverification-ios.a */; };
 		4B935282226727F0004A49E9 /* account_login_sdk_noui_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B93527B226727F0004A49E9 /* account_login_sdk_noui_core.framework */; };
 		4B935283226727F0004A49E9 /* RCTJVerificationModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B93527C226727F0004A49E9 /* RCTJVerificationModule.m */; };
 		4B935284226727F0004A49E9 /* TYRZSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B93527D226727F0004A49E9 /* TYRZSDK.framework */; };
 		4B935285226727F0004A49E9 /* EAccountApiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B93527E226727F0004A49E9 /* EAccountApiSDK.framework */; };
 		4B935286226727F0004A49E9 /* account_verify_sdk_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B93527F226727F0004A49E9 /* account_verify_sdk_core.framework */; };
-		4B935287226727F0004A49E9 /* jverification-ios-2.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B935280226727F0004A49E9 /* jverification-ios-2.1.1.a */; };
 		4B93529A22673052004A49E9 /* RCTJVerificationModule.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 4B93527A226727F0004A49E9 /* RCTJVerificationModule.h */; };
-		4B935356226733CB004A49E9 /* jverification-ios-2.1.1.a in Copy Files */ = {isa = PBXBuildFile; fileRef = 4B935280226727F0004A49E9 /* jverification-ios-2.1.1.a */; };
 		62890E6721902C3B00803A2B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62890E6621902C3B00803A2B /* AdSupport.framework */; };
 		62890E6921902C4100803A2B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62890E6821902C4100803A2B /* CoreLocation.framework */; };
 		62890E6B21902C4600803A2B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62890E6A21902C4600803A2B /* CFNetwork.framework */; };
@@ -36,7 +35,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				4B935356226733CB004A49E9 /* jverification-ios-2.1.1.a in Copy Files */,
 				4B93529A22673052004A49E9 /* RCTJVerificationModule.h in Copy Files */,
 			);
 			name = "Copy Files";
@@ -45,13 +43,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4B796F18226764410026434A /* jverification-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jverification-ios.a"; sourceTree = "<group>"; };
 		4B93527A226727F0004A49E9 /* RCTJVerificationModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTJVerificationModule.h; sourceTree = "<group>"; };
 		4B93527B226727F0004A49E9 /* account_login_sdk_noui_core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = account_login_sdk_noui_core.framework; sourceTree = "<group>"; };
 		4B93527C226727F0004A49E9 /* RCTJVerificationModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTJVerificationModule.m; sourceTree = "<group>"; };
 		4B93527D226727F0004A49E9 /* TYRZSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYRZSDK.framework; sourceTree = "<group>"; };
 		4B93527E226727F0004A49E9 /* EAccountApiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EAccountApiSDK.framework; sourceTree = "<group>"; };
 		4B93527F226727F0004A49E9 /* account_verify_sdk_core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = account_verify_sdk_core.framework; sourceTree = "<group>"; };
-		4B935280226727F0004A49E9 /* jverification-ios-2.1.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jverification-ios-2.1.1.a"; sourceTree = "<group>"; };
 		4B935281226727F0004A49E9 /* JVERIFICATIONService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVERIFICATIONService.h; sourceTree = "<group>"; };
 		62890E502190232500803A2B /* libRCTJVerificationModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTJVerificationModule.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		62890E6621902C3B00803A2B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -81,7 +79,7 @@
 				4B935286226727F0004A49E9 /* account_verify_sdk_core.framework in Frameworks */,
 				62890E7521902C6F00803A2B /* SystemConfiguration.framework in Frameworks */,
 				62890E7321902C6700803A2B /* CoreTelephony.framework in Frameworks */,
-				4B935287226727F0004A49E9 /* jverification-ios-2.1.1.a in Frameworks */,
+				4B796F19226764410026434A /* jverification-ios.a in Frameworks */,
 				62890E7121902C5D00803A2B /* libz.tbd in Frameworks */,
 				62890E6F21902C5600803A2B /* libresolv.tbd in Frameworks */,
 				62890E6D21902C4E00803A2B /* CoreFoundation.framework in Frameworks */,
@@ -119,7 +117,7 @@
 				4B93527B226727F0004A49E9 /* account_login_sdk_noui_core.framework */,
 				4B93527F226727F0004A49E9 /* account_verify_sdk_core.framework */,
 				4B93527E226727F0004A49E9 /* EAccountApiSDK.framework */,
-				4B935280226727F0004A49E9 /* jverification-ios-2.1.1.a */,
+				4B796F18226764410026434A /* jverification-ios.a */,
 				4B935281226727F0004A49E9 /* JVERIFICATIONService.h */,
 				4B93527A226727F0004A49E9 /* RCTJVerificationModule.h */,
 				4B93527C226727F0004A49E9 /* RCTJVerificationModule.m */,
