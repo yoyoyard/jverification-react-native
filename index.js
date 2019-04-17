@@ -1,5 +1,5 @@
-import { 
-    DeviceEventEmitter, 
+import {
+    DeviceEventEmitter,
     NativeModules,
     Platform
 } from 'react-native'
@@ -7,7 +7,7 @@ import {
 const JVerificationModule = NativeModules.JVerificationModule
 
 export default class JVerification {
-    
+
     /**
      * 初始化 JVerification SDK
      * @param {Object} params = { android在build.gradle中配置
@@ -17,7 +17,7 @@ export default class JVerification {
      *  isProduction: boolean // isProduction 是否生产环境. 如果为开发状态,设置为NO;如果为生产状态,应改为YES.可选，默认为NO
      * }
      */
-    
+
     static init(params) {
         if(Platform.OS==="android"){
             JVerificationModule.init();
@@ -25,10 +25,10 @@ export default class JVerification {
             JVerificationModule.setupWithConfig(params);
         }
     }
-    
+
     /**
      * 请在SDK启动后调用本接口, 调用本接口可打开日志级别为: Debug, 打印调试日志.
-     * @param {boolean} enable 
+     * @param {boolean} enable
      */
     static setDebugEnable(enable) {
         if(Platform.OS==="android"){
@@ -37,7 +37,7 @@ export default class JVerification {
             JVerificationModule.setDebug(enable);
         }
     }
-    
+
      /**
      * 判断网络环境是否支持
      * @param {Function} callback = (result) => {
@@ -116,11 +116,11 @@ export default class JVerification {
     }
 
 
-    /** 
+    /**
      * 设置一键登录页面样式
      *   均可选,需要在login前调用生效(ios需要将图片放入JVerificationResource.bundle)
      *   var config = {
-     *       navColor:number,                  //导航栏颜色    
+     *       navColor:number,                  //导航栏颜色
      *       navText: string,                  //导航栏标题
      *       navTextColor:number,              //导航栏标题文字颜色
      *       navReturnImage:string,            //导航栏左侧返回按钮
