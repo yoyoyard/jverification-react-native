@@ -14,6 +14,7 @@
 		4B935286226727F0004A49E9 /* account_verify_sdk_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B93527F226727F0004A49E9 /* account_verify_sdk_core.framework */; };
 		4B935287226727F0004A49E9 /* jverification-ios-2.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B935280226727F0004A49E9 /* jverification-ios-2.1.1.a */; };
 		4B93529A22673052004A49E9 /* RCTJVerificationModule.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 4B93527A226727F0004A49E9 /* RCTJVerificationModule.h */; };
+		4B935356226733CB004A49E9 /* jverification-ios-2.1.1.a in Copy Files */ = {isa = PBXBuildFile; fileRef = 4B935280226727F0004A49E9 /* jverification-ios-2.1.1.a */; };
 		62890E6721902C3B00803A2B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62890E6621902C3B00803A2B /* AdSupport.framework */; };
 		62890E6921902C4100803A2B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62890E6821902C4100803A2B /* CoreLocation.framework */; };
 		62890E6B21902C4600803A2B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62890E6A21902C4600803A2B /* CFNetwork.framework */; };
@@ -35,6 +36,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				4B935356226733CB004A49E9 /* jverification-ios-2.1.1.a in Copy Files */,
 				4B93529A22673052004A49E9 /* RCTJVerificationModule.h in Copy Files */,
 			);
 			name = "Copy Files";
