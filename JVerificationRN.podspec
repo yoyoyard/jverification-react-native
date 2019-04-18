@@ -20,5 +20,7 @@ Pod::Spec.new do |s|
   s.libraries       = 'z','resolv', 'sqlite3'
   s.vendored_libraries = "ios/RCTJVerificationModule/*.a"
   s.vendored_frameworks = "ios/RCTJVerificationModule/*.framework"
+
   s.dependency 'React'
+  s.dependency 'JVerification', "~> 2.1.1"
 end
