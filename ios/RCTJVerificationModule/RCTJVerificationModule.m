@@ -54,19 +54,19 @@ RCT_EXPORT_METHOD(setupWithConfig: (NSDictionary *)params) {
   if (params[@"appKey"]) {
     config.appKey = params[@"appKey"];
   }
-  
+
   if (params[@"channel"]) {
     config.channel = params[@"channel"];
   }
-  
+
   if (params[@"advertisingId"]) {
     config.advertisingId = params[@"advertisingId"];
   }
-  
+
   if (params[@"advertisingId"]) {
     config.advertisingId = params[@"advertisingId"];
   }
-  
+
   if (params[@"isProduction"]) {
     config.isProduction = [params[@"isProduction"] boolValue];
   }
@@ -82,7 +82,7 @@ RCT_EXPORT_METHOD(checkVerifyEnable:(RCTResponseSenderBlock)callback){
 }
 
 RCT_EXPORT_METHOD(getToken: (RCTResponseSenderBlock)callback) {
-  
+
   [JVERIFICATIONService getToken:^(NSDictionary *result) {
       [self doResult:result callback:callback];
   }];
@@ -91,15 +91,15 @@ RCT_EXPORT_METHOD(getToken: (RCTResponseSenderBlock)callback) {
 RCT_EXPORT_METHOD(verifyNumber: (NSDictionary *)params
                   callback: (RCTResponseSenderBlock)callback) {
   JVAuthEntity *entity = [[JVAuthEntity alloc] init];
-  
+
   if (params[@"number"]) {
     entity.number = params[@"number"];
   }
-  
+
   if (params[@"token"]) {
     entity.token = params[@"token"];
   }
-  
+
   [JVERIFICATIONService verifyNumber:entity result:^(NSDictionary *result) {
       [self doResult:result callback:callback];
   }];
@@ -112,12 +112,12 @@ RCT_EXPORT_METHOD(customUIWithConfig: (NSDictionary *)params) {
     JVUnicomUIConfig *unicomUIConfig = [[JVUnicomUIConfig alloc] init];
     //电信
     JVTelecomUIConfig *telecomUIConfig = [[JVTelecomUIConfig alloc] init];
-    
-    
+
+
     mobileUIConfig.barStyle = 0;
     unicomUIConfig.barStyle = 0;
     telecomUIConfig.barStyle = 0;
-    
+
     if(params[@"navColor"]){
         NSNumber *color = params[@"navColor"];
         UIColor *navColor =  UIColorFromRGBValue(color.integerValue);
@@ -125,7 +125,7 @@ RCT_EXPORT_METHOD(customUIWithConfig: (NSDictionary *)params) {
         unicomUIConfig.navColor = navColor;
         telecomUIConfig.navColor = navColor;
     }
-    
+
     NSString *navTextString = @"登录";
     if(params[@"navText"]){
         navTextString = params[@"navText"];
@@ -140,7 +140,7 @@ RCT_EXPORT_METHOD(customUIWithConfig: (NSDictionary *)params) {
     mobileUIConfig.navText = attr;
     unicomUIConfig.navText = attr;
     telecomUIConfig.navText = attr;
-    
+
     if(params[@"navReturnImage"]){
         NSString *str = params[@"navReturnImage"];
         NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"JVerificationResource" ofType:@"bundle"];
@@ -151,14 +151,14 @@ RCT_EXPORT_METHOD(customUIWithConfig: (NSDictionary *)params) {
         unicomUIConfig.navReturnImg = navReturnImage;
         telecomUIConfig.navReturnImg = navReturnImage;
     }
-    
+
     if(params[@"logoHidden"]){
         BOOL hide =[params[@"logoHidden"] boolValue];
         mobileUIConfig.logoHidden = hide;
         unicomUIConfig.logoHidden = hide;
         telecomUIConfig.logoHidden = hide;
     }
-    
+
     if(params[@"logoWidth"]){
         NSNumber *width = params[@"logoWidth"];
         CGFloat _logoWidth = [width floatValue];
@@ -166,7 +166,7 @@ RCT_EXPORT_METHOD(customUIWithConfig: (NSDictionary *)params) {
         unicomUIConfig.logoWidth = _logoWidth;
         telecomUIConfig.logoWidth = _logoWidth;
     }
-    
+
     if(params[@"logoHeight"]){
         NSNumber *height = params[@"logoHeight"];
         CGFloat _logoHeight= [height floatValue];
@@ -174,7 +174,7 @@ RCT_EXPORT_METHOD(customUIWithConfig: (NSDictionary *)params) {
         unicomUIConfig.logoWidth = _logoHeight;
         telecomUIConfig.logoWidth = _logoHeight;
     }
-    
+
     if(params[@"logoImage"]){
         NSString *str = params[@"logoImage"];
         NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"JVerificationResource" ofType:@"bundle"];
@@ -185,7 +185,7 @@ RCT_EXPORT_METHOD(customUIWithConfig: (NSDictionary *)params) {
         unicomUIConfig.logoImg = logoImage;
         telecomUIConfig.logoImg = logoImage;
     }
-    
+
     if(params[@"logoOffsetY"]){
         NSNumber *offset = params[@"logoOffsetY"];
         CGFloat _logoOffsetY= [offset floatValue];
@@ -193,7 +193,7 @@ RCT_EXPORT_METHOD(customUIWithConfig: (NSDictionary *)params) {
         unicomUIConfig.logoOffsetY = _logoOffsetY;
         telecomUIConfig.logoOffsetY = _logoOffsetY;
     }
-    
+
     if(params[@"numColor"]){
         NSNumber *color = params[@"navColor"];
         UIColor *numberColor =  UIColorFromRGBValue([color intValue]);
@@ -201,7 +201,7 @@ RCT_EXPORT_METHOD(customUIWithConfig: (NSDictionary *)params) {
         unicomUIConfig.numberColor = numberColor;
         telecomUIConfig.numberColor = numberColor;
     }
-    
+
     if(params[@"numOffsetY"]){
         NSNumber *offset = params[@"numOffsetY"];
         CGFloat _numOffsetY= [offset floatValue];
@@ -209,7 +209,7 @@ RCT_EXPORT_METHOD(customUIWithConfig: (NSDictionary *)params) {
         unicomUIConfig.numFieldOffsetY = _numOffsetY;
         telecomUIConfig.numFieldOffsetY = _numOffsetY;
     }
-    
+
     if(params[@"sloganTextColor"]){
         NSNumber *color = params[@"sloganTextColor"];
         UIColor *sloganTextColor =  UIColorFromRGBValue([color intValue]);
@@ -217,7 +217,7 @@ RCT_EXPORT_METHOD(customUIWithConfig: (NSDictionary *)params) {
         unicomUIConfig.sloganTextColor = sloganTextColor;
         telecomUIConfig.sloganTextColor = sloganTextColor;
     }
-    
+
     if(params[@"sloganOffsetY"]){
         NSNumber *offset = params[@"sloganOffsetY"];
         CGFloat _sloganOffsetY= [offset floatValue];
@@ -225,14 +225,14 @@ RCT_EXPORT_METHOD(customUIWithConfig: (NSDictionary *)params) {
         unicomUIConfig.sloganOffsetY = _sloganOffsetY;
         telecomUIConfig.sloganOffsetY = _sloganOffsetY;
     }
-    
+
     if(params[@"loginBtnText"]){
         NSString *str = params[@"loginBtnText"];
         mobileUIConfig.logBtnText = str;
         unicomUIConfig.logBtnText = str;
         telecomUIConfig.logBtnText = str;
     }
-    
+
     if(params[@"loginBtnTextColor"]){
         NSNumber *color = params[@"loginBtnTextColor"];
         UIColor *loginBtnTextColor =  UIColorFromRGBValue([color intValue]);
@@ -240,7 +240,7 @@ RCT_EXPORT_METHOD(customUIWithConfig: (NSDictionary *)params) {
         unicomUIConfig.logBtnTextColor = loginBtnTextColor;
         telecomUIConfig.logBtnTextColor = loginBtnTextColor;
     }
-    
+
     NSString *normalImageStr = nil;
     if(params[@"loginBtnNormalImage"]){
         normalImageStr = params[@"loginBtnNormalImage"];
@@ -253,18 +253,18 @@ RCT_EXPORT_METHOD(customUIWithConfig: (NSDictionary *)params) {
     if(params[@"loginBtnUnableImage"]){
         unableImageStr = params[@"loginBtnUnableImage"];
     }
-    
+
     NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"JVerificationResource" ofType:@"bundle"];
     UIImage *loginBtnNormalImage= [UIImage imageWithContentsOfFile:[bundlePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png",normalImageStr]]];
     UIImage *loginBtnPressedImage= [UIImage imageWithContentsOfFile:[bundlePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png",pressedlImageStr]]];
     UIImage *loginBtnUnableImage= [UIImage imageWithContentsOfFile:[bundlePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png",unableImageStr]]];
-    
+
     NSArray * images =[[NSArray alloc]initWithObjects:loginBtnNormalImage,loginBtnUnableImage,loginBtnPressedImage,nil];
     mobileUIConfig.logBtnImgs = images;
     unicomUIConfig.logBtnImgs = images;
     telecomUIConfig.logBtnImgs = images;
-    
-    
+
+
     if(params[@"loginBtnOffsetY"]){
         NSNumber *offset = params[@"loginBtnOffsetY"];
         CGFloat _loginBtnOffsetY= [offset floatValue];
@@ -272,7 +272,7 @@ RCT_EXPORT_METHOD(customUIWithConfig: (NSDictionary *)params) {
         unicomUIConfig.logBtnOffsetY = _loginBtnOffsetY;
         telecomUIConfig.logBtnOffsetY = _loginBtnOffsetY;
     }
-    
+
     NSString *privacyOneName = @"应用自定义服务条款1";
     if(params[@"privacyOneName"]){
         privacyOneName = params[@"privacyOneName"];
@@ -284,7 +284,7 @@ RCT_EXPORT_METHOD(customUIWithConfig: (NSDictionary *)params) {
     mobileUIConfig.appPrivacyOne = @[privacyOneName,privacyOneUrl];
     unicomUIConfig.appPrivacyOne = @[privacyOneName,privacyOneUrl];
     telecomUIConfig.appPrivacyOne = @[privacyOneName,privacyOneUrl];
-    
+
     NSString *privacyTwoName = @"应用自定义服务条款2";
     if(params[@"privacyTwoName"]){
         privacyTwoName = params[@"privacyTwoName"];
@@ -296,7 +296,7 @@ RCT_EXPORT_METHOD(customUIWithConfig: (NSDictionary *)params) {
     mobileUIConfig.appPrivacyTwo = @[privacyTwoName,privacyTwoUrl];
     unicomUIConfig.appPrivacyTwo = @[privacyTwoName,privacyTwoUrl];
     telecomUIConfig.appPrivacyTwo = @[privacyTwoName,privacyTwoUrl];
-    
+
     UIColor *privacyBasicColor = [UIColor grayColor];
     if(params[@"privacyBasicColor"]){
         NSNumber *color = params[@"privacyBasicColor"];
@@ -310,31 +310,31 @@ RCT_EXPORT_METHOD(customUIWithConfig: (NSDictionary *)params) {
     mobileUIConfig.appPrivacyColor = @[privacyBasicColor,privacyProtocolColor];
     unicomUIConfig.appPrivacyColor = @[privacyBasicColor,privacyProtocolColor];
     telecomUIConfig.appPrivacyColor = @[privacyBasicColor,privacyProtocolColor];
-    
+
     if(params[@"privacyCheckImage"]){
         NSString *str = params[@"privacyCheckImage"];
         NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"JVerificationResource" ofType:@"bundle"];
         NSString *imageName =  [NSString stringWithFormat:@"%@.png",str];
         NSString *imagePath = [bundlePath stringByAppendingPathComponent:imageName];
         UIImage *privacyCheckImage= [UIImage imageWithContentsOfFile:imagePath];
-        
+
         mobileUIConfig.checkedImg = privacyCheckImage;
         unicomUIConfig.checkedImg = privacyCheckImage;
         telecomUIConfig.checkedImg = privacyCheckImage;
     }
-    
+
     if(params[@"privacyUncheckImage"]){
         NSString *str = params[@"privacyUncheckImage"];
         NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"JVerificationResource" ofType:@"bundle"];
         NSString *imageName =  [NSString stringWithFormat:@"%@.png",str];
         NSString *imagePath = [bundlePath stringByAppendingPathComponent:imageName];
         UIImage *privacyUncheckImage= [UIImage imageWithContentsOfFile:imagePath];
-        
+
         mobileUIConfig.uncheckedImg = privacyUncheckImage;
         unicomUIConfig.uncheckedImg = privacyUncheckImage;
         telecomUIConfig.uncheckedImg = privacyUncheckImage;
     }
-    
+
     if(params[@"privacyOffsetY"]){
         NSNumber *offset = params[@"privacyOffsetY"];
         CGFloat _privacyOffsetY= [offset floatValue];
@@ -342,7 +342,7 @@ RCT_EXPORT_METHOD(customUIWithConfig: (NSDictionary *)params) {
         unicomUIConfig.privacyOffsetY = _privacyOffsetY;
         telecomUIConfig.privacyOffsetY = _privacyOffsetY;
     }
-    
+
     [JVERIFICATIONService customUIWithConfig:mobileUIConfig customViews:^(UIView *customAreaView) {}];
     [JVERIFICATIONService customUIWithConfig:unicomUIConfig customViews:^(UIView *customAreaView) {}];
     [JVERIFICATIONService customUIWithConfig:telecomUIConfig customViews:^(UIView *customAreaView) {}];
@@ -386,7 +386,9 @@ RCT_EXPORT_METHOD(getAuthorizationWithController: (RCTResponseSenderBlock)callba
     callback(@[@{@"code":@(code),@"content":content?:@"",@"operator":operator?:@""}]);
 }
 
-
-
++ (BOOL)requiresMainQueueSetup
+{
+    return YES;
+}
 
 @end
